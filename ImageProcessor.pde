@@ -26,13 +26,10 @@ class ImageProcessor {
       output.filter(POSTERIZE,8);  
     } else if (filterType=="THRESHOLD") {
       output = input;
-<<<<<<< HEAD
       output.filter(BLUR, 6);
     } else if (filterType=="PIXELS") {
       output = getPixels(input);
-=======
       output.filter(THRESHOLD,0.5);
->>>>>>> cee1e2ffa6e8ff03251f39fc732df9733910ef31
     }else {
       output = input;
     }
