@@ -78,6 +78,7 @@ class PhotoBoothController {
   }
   
   public void drawPhotoShoot() {
+  textFont(font); 
     fill(0);
     rect(width/2-40, height/2-40, 80, 80);
     fill(#FF0000);

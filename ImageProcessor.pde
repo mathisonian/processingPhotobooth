@@ -1,5 +1,5 @@
 
-String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "BLUR"};
+String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "BLUR", "PIXELS"};
 
 class ImageProcessor {
   int filterNum;
@@ -11,7 +11,7 @@ class ImageProcessor {
     PImage output;
     String filterType = filters[filterNum];
     if(filterType == "NONE") {
-      output = input; 
+      output = kinect.getVideoImage(); 
     }
     // Todo everyting else
     else if(filterType=="BW") {
@@ -27,9 +27,37 @@ class ImageProcessor {
     } else if (filterType=="BLUR") {
       output = input;
       output.filter(BLUR, 6);
+    } else if (filterType=="PIXELS") {
+      output = getPixels(input);
     }else {
       output = input;
     }
     return output;
   }
+  
+//  textFont(font, fontSize);
+}
+
+PImage getPixels(PImage input) {
+  depth = kinect.getRawDepth();
+  int offset, c;
+  PImage output = new PImage(640, 480);
+  for(int i=pixelSize; i<input.width; i+=pixelSize) {
+    for(int j=pixelSize; j<input.height;j+=pixelSize) {
+      offset = i+j*input.width;
+      if(depth[offset] > threshold) {
+        c = color(random(255),random(255),random(255));
+//        drawImage.pixels[offset] = 
+      } else {
+        c = input.pixels[offset];
+      }
+//      fill(c);
+      for(int k=i-pixelSize; k<i; k++) {
+        for(int l=j-pixelSize; l<j; l++) {
+          output.pixels[k+l*input.width] = c; 
+        }
+      }
+    }
+  }
+  return output;
 }
