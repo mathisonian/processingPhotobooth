@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
-String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "BLUR", "PIXELS"};
-=======
-String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "THRESHOLD"};
->>>>>>> cee1e2ffa6e8ff03251f39fc732df9733910ef31
+String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "THRESHOLD", "PIXELS"};
 
 class ImageProcessor {
   int filterNum;
