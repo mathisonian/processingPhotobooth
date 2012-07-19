@@ -5,8 +5,8 @@ class PhotoBoothController {
   ImageProcessor imageProcessor;
   boolean isPhotoShoot, endPhotoShoot;
   int startPhotoShoot;
-  int photoDelay = 20;
-  int oldShootTimeout = 100;
+  int photoDelay = 10;
+  int oldShootTimeout = 50;
   int oldShoot = 0;
   
   public PhotoBoothController() {

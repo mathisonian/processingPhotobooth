@@ -1,5 +1,5 @@
 
-String[] filters = {"NONE", "BW", "INVERT"};
+String[] filters = {"NONE", "BW", "INVERT", "POSTERIZE", "BLUR"};
 
 class ImageProcessor {
   int filterNum;
@@ -20,7 +20,14 @@ class ImageProcessor {
     } else if(filterType=="INVERT") {
       output = input;
       output.filter(INVERT);
-    } else {
+    } else if(filterType=="POSTERIZE") { 
+      output = input;
+      output.filter(GRAY);
+      output.filter(POSTERIZE,8);  
+    } else if (filterType=="BLUR") {
+      output = input;
+      output.filter(BLUR, 6);
+    }else {
       output = input;
     }
     return output;

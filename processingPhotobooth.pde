@@ -12,7 +12,7 @@ PhotoBoothController photoBoothController;
 void setup() {
   photoBoothController = new PhotoBoothController();
   size(640*2+dividerSize, 480*2+dividerSize);
-  frameRate(15);
+  frameRate(10);
   smooth();
   font = loadFont("SansSerif-64.vlw"); 
   textFont(font); 
