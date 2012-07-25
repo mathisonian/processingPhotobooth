@@ -41,6 +41,7 @@ class PhotoBoothController {
   
   public void oldShoot() {
     if(oldShoot > oldShootTimeout) {
+      saveFrame(); 
       tryPhotoShoot();
     }
     oldShoot++;

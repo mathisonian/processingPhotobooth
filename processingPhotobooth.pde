@@ -19,6 +19,7 @@ void setup() {
   photoBoothController = new PhotoBoothController();
   size(640*2+dividerSize, 480*2+dividerSize, OPENGL);
   frameRate(5);
+  noCursor();
   smooth();
   font = loadFont("SansSerif-64.vlw");
   kinect = new Kinect(this);
